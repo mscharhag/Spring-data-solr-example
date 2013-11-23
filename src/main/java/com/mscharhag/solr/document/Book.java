@@ -3,11 +3,9 @@ package com.mscharhag.solr.document;
 import java.util.List;
 
 import org.apache.solr.client.solrj.beans.Field;
-import org.springframework.data.annotation.Id;
 
 public class Book {
 	
-    //@Id
     @Field
     private String id;
 

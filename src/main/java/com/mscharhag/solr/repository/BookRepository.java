@@ -18,14 +18,11 @@ public interface BookRepository extends SolrCrudRepository<Book, String> {
 
 	List<Book> findByName(String name);
 	
-	
 	Page<Book> findByNameOrDescription(@Boost(2) String name, String description, Pageable pageable);
-	
 
 	@Query(value = "name:?0")
 	@Facet(fields = { "categories_txt" }, limit = 5)
 	FacetPage<Book> findByNameAndFacetOnCategories(String name, Pageable page);
-
 	
 	@Highlight(prefix = "<highlight>", postfix = "</highlight>")
 	HighlightPage<Book> findByDescription(String description, Pageable pageable);
