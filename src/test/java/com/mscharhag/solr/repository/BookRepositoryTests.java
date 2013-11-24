@@ -52,7 +52,7 @@ public class BookRepositoryTests {
 	public void findByName() {
 		List<Book> books = bookRepository.findByName("Island");
 		
-		// the following book names contain the string "Island": 01, 02, 05, 08
+		// Books with IDs 01, 02, 05, 08 contain "Island" in their name 
 		assertEquals(books.size(), 4);
 		assertTrue(containsBooksWithIds(books, "01", "02", "05", "08"));
 	}
