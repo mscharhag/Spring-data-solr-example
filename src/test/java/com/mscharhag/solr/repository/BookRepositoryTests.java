@@ -103,7 +103,7 @@ public class BookRepositoryTests {
 	
 	private boolean containsSnipplet(HighlightPage<Book> booksHighlightPage, String snippletToCheck) {
 		for (HighlightEntry<Book> he : booksHighlightPage.getHighlighted()) {
-			// A HighlightEntry belongs to an Entity (getEntity()) and may have multiple highlighted fields (Highlight)
+			// A HighlightEntry belongs to an Entity (Book) and may have multiple highlighted fields (description)
 			for (Highlight highlight : he.getHighlights()) {
 				for (String snipplet : highlight.getSnipplets()) {
 					
@@ -122,16 +122,16 @@ public class BookRepositoryTests {
 			System.out.println("Not adding test data to solr index. Data already exists");
 			return;
 		}
-		addBookToIndex("01", "Treasure Island", 		"Best seller by R.L.S.",								ADVENTURE);
-		addBookToIndex("02", "Treasure Island 2.0",		"Humorous remake of the famous best seller", 			ADVENTURE, HUMOR);
-		addBookToIndex("03", "Solr for dummies", 		"Get started with solr",		 						EDUCATION, HUMOR, TECHNOLOGY);
-		addBookToIndex("04", "Moon landing", 			"All facts about Apollo 11, a best seller",				HISTORY, EDUCATION);
-		addBookToIndex("05", "Spring Island",			"The perfect island romance..", 						ROMANCE);
-		addBookToIndex("06", "Refactoring", 			"It's about improving the design of existing code.",	TECHNOLOGY);
-		addBookToIndex("07", "Baking for dummies", 		"Bake your own cookies, on a secret island!", 			EDUCATION, HUMOR);
-		addBookToIndex("08", "The Pirate Island",		"Oh noes, the pirates are coming!", 					ADVENTURE, HUMOR);
-		addBookToIndex("09", "Blackbeard", 				"It's the pirate Edward Teach!",		 				ADVENTURE, HISTORY);
-		addBookToIndex("10", "Handling Cookies", 		"How to handle cookies in web applications",			TECHNOLOGY);
+		addBookToIndex("01", "Treasure Island",     "Best seller by R.L.S.",                             ADVENTURE);
+		addBookToIndex("02", "Treasure Island 2.0", "Humorous remake of the famous best seller",         ADVENTURE, HUMOR);
+		addBookToIndex("03", "Solr for dummies",    "Get started with solr",                             EDUCATION, HUMOR, TECHNOLOGY);
+		addBookToIndex("04", "Moon landing",        "All facts about Apollo 11, a best seller",          HISTORY, EDUCATION);
+		addBookToIndex("05", "Spring Island",       "The perfect island romance..",                      ROMANCE);
+		addBookToIndex("06", "Refactoring",         "It's about improving the design of existing code.", TECHNOLOGY);
+		addBookToIndex("07", "Baking for dummies",  "Bake your own cookies, on a secret island!",        EDUCATION, HUMOR);
+		addBookToIndex("08", "The Pirate Island",   "Oh noes, the pirates are coming!",                  ADVENTURE, HUMOR);
+		addBookToIndex("09", "Blackbeard",          "It's the pirate Edward Teach!",                     ADVENTURE, HISTORY);
+		addBookToIndex("10", "Handling Cookies",    "How to handle cookies in web applications",         TECHNOLOGY);
 	}
 	
 	

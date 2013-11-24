@@ -20,7 +20,7 @@ public interface BookRepository extends SolrCrudRepository<Book, String> {
 	
 	Page<Book> findByNameOrDescription(@Boost(2) String name, String description, Pageable pageable);
 
-	@Query(value = "name:?0")
+	@Query("name:?0")
 	@Facet(fields = { "categories_txt" }, limit = 5)
 	FacetPage<Book> findByNameAndFacetOnCategories(String name, Pageable page);
 	
