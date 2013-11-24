@@ -43,7 +43,7 @@ public class BookRepositoryTests {
 	
 	
 	@Before
-	public void beforeClass() {
+	public void before() {
 		createSampleData();
 	}
 	
